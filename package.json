@@ -1,0 +1,29 @@
+{
+  "name": "@igraphical/core",
+  "version": "1.0.29",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts",
+    "dev": "tsc --watch",
+    "prisma:generate": "prisma generate --schema=src/prisma/schema.prisma",
+    "release": "npm run build && npm version patch && npm publish"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cloudinary": "^2.6.0",
+    "tsup": "^8.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "prisma": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "private": false
+}
